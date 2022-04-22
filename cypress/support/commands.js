@@ -1,28 +1,4 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
 
 var setCookie = require('set-cookie-parser');
 
@@ -38,8 +14,6 @@ Cypress.Commands.add('auth', () => {
             },
         },
     }).then((response) => {
-        //cy.log(response.headers['set-cookie'][0].value);
-        //cy.setCookie('_fieldwire_api_session', response.headers['set-cookie'][0].value )
         const cookies = response.headers['set-cookie']
         cookies.forEach( cook => {
             
@@ -59,32 +33,6 @@ Cypress.Commands.add('auth', () => {
         cy.log(Cypress.env("token"));
         cy.log(Cypress.env("id"));
     })
-
-    // cy.request({
-    //     method: 'GET',
-    //     url: '/api/v3/current_user', 
-    //     followRedirect: true,
-    //     headers:{
-    //         'Fieldwire-Platform': 'web',
-    //         'Fieldwire-User-Session-Id': Cypress.env("sessionId"),
-    //         'Fieldwire-Released-At': '2022-04-13T18:08:09Z',
-    //         'Fieldwire-Version': '2020-06-22',
-    //         'Accept': 'application/json',
-    //         'Fieldwire-User-Id': Cypress.env("id"),
-    //         'Fieldwire-User-Token': Cypress.env("token"),
-    //         'sec-ch-ua-mobile': '?0',
-    //         'Fieldwire-Release-Id': 'b5435f99',
-    //         'Fieldwire-Filter': 'active',
-    //         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36',
-    //         'sec-ch-ua-platform': "macOS",
-    //         'Sec-Fetch-Site': 'same-origin',
-    //         'Sec-Fetch-Mode': 'cors',
-    //         'Sec-Fetch-Dest': 'empty',
-    //         'Referer': 'https://app.fieldwire.com/',
-    //         'Accept-Encoding': 'gzip, deflate, br',
-    //         'Accept-Language': 'en,hu;q=0.9,en-US;q=0.8'
-    //     }
-    // })
 })
 
 Cypress.Commands.add('login', () => {
