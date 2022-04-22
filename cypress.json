@@ -1,0 +1,4 @@
+{
+    "baseUrl": "https://app.fieldwire.com",
+    "chromeWebSecurity": false
+}
