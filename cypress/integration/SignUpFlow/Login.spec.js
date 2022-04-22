@@ -55,6 +55,6 @@ context('Sign up flow', () => {
         cy.get('.btn').should('be.disabled')
         cy.get('#explicitAgreement').click()
         cy.get('.btn').should('be.enabled')
-        //I'm not finishing the new user creation because I didn't  want to spam the database with test users that I can't yet delete but if there is a delete user api, I would use it to clean up the user created during the test run. If not, I would create a deleteScript to remove entries the automation runs after each run    
+        //I'm not actually submiting the new user creation because I didn't  want to spam the database with test users that I can't yet delete but if there is a delete user api, I would use it to clean up the user created during the test run. If not, I would create a deleteScript to remove entries the automation runs after each run    
     })
 });

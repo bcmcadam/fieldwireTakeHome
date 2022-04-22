@@ -1,6 +1,5 @@
 // NewProject.spec.js created with Cypress
 
-const { copyFile } = require("fs");
 
 context('New Project Flows', () => {
     it('can create a new project', () => {
@@ -78,8 +77,3 @@ context('New Project Flows', () => {
     })
 });
 
-
-//bug: Can we add sample plans no button does nothing
-//bug: tasks are not visble unless browser window is meets threshold size
-//possible bug: hitting back from the create company profile screen (without entering the company info) goes directly into the app
-//bug: Project name takes basically anything
